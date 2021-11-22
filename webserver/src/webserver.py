@@ -46,6 +46,7 @@ def Sensor_On():
     global conn
     message = CreateMessage("S","Turn ON")
     conn.send(message.encode())
+    return "Success"
     
 
 #Downloads the logs
@@ -63,7 +64,7 @@ def Sensor_Off():
     global conn
     message = CreateMessage("S","Turn OFF")
     conn.send(message.encode())
-    
+    return "Success"
 
 #Sends message to the client to get the currnet status of the sensors
 @app.route('/Status')
@@ -71,6 +72,7 @@ def Status():
     global conn
     message = CreateMessage("S","Status")
     conn.send(message.encode())
+    return "Success"
     
 
 #checks the last few readings of the sensors
